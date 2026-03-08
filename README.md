@@ -65,45 +65,47 @@ Kino Royal ist eine moderne Webanwendung, die es Kinobetreibern ermöglicht, Sä
 
 ## 📁 Projektstruktur
 ```
-KinoRoyal2.0/
-├── Webapp/
-│   ├── public/
-│   │   ├── index.html
-│   │   └── assets/
-│   │       └── logo.png
-│   └── src/
-│       ├── js/
-│       │   ├── Main.mjs
-│       │   ├── router.js
-│       │   └── Views/
-│       │       ├── rollen.js
-│       │       ├── kunde.js
-│       │       ├── betreiber.js
-│       │       ├── reservierung.js
-│       │       └── bestaetigung.js
-│       └── styles/
-│           ├── main.less
-│           ├── rollen.less
-│           ├── kunde.less
-│           ├── betreiber.less
-│           ├── reservierung.less
-│           └── bestaetigung.less
-├── server/
-│   ├── server.js
-│   ├── models/
-│   │   ├── Kinosaal.js
-│   │   ├── Vorstellung.js
-│   │   └── Reservierung.js
-│   └── routes/
-│       ├── kinosaele.js
-│       ├── vorstellungen.js
-│       └── reservierungen.js
-├── scripts/
-│   └── copy-assets.js
-├── node_modules/            # Generiert durch npm install
-├── dist/ (generiert)
+Kino-Royal-2.0/
+├── .gitignore
+├── package-lock.json
 ├── package.json
-└── README.md
+├── dist (generiert)
+├── node_modules (generiert)
+├── public/
+│   ├── assets/
+│   │   └── logo.png
+│   ├── bundle.js
+│   ├── index.html
+│   └── style.css
+├── README.md
+├── Scripts/
+│   └── copy-assets.js
+├── Server/
+│   ├── kinosaal.js
+│   ├── reservierung.js
+│   ├── server.js
+│   └── vorstellung.js
+└── Webapp/
+    └── src/
+        ├── js/
+        │   ├── Main.mjs
+        │   ├── router.js
+        │   ├── Scripts/
+        │   │   └── copy-assets.js
+        │   └── Views/
+        │       ├── bestaetigung.js
+        │       ├── betreiber.js
+        │       ├── kunde.js
+        │       ├── reservierung.js
+        │       └── rollen.js
+        └── styles/
+            ├── bestaetigung.less
+            ├── betreiber.less
+            ├── kunde.less
+            ├── main.less
+            ├── reservierung.less
+            └── rollen.less
+**Hinweis:** Die Ordner `dist/` und `node_modules/` werden automatisch generiert und sind nicht Teil des Repositories.
 ```
 
 ---
