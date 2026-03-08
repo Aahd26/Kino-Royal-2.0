@@ -74,9 +74,7 @@ Kino-Royal-2.0/
 ├── public/
 │   ├── assets/
 │   │   └── logo.png
-│   ├── bundle.js
 │   ├── index.html
-│   └── style.css
 ├── README.md
 ├── Scripts/
 │   └── copy-assets.js
