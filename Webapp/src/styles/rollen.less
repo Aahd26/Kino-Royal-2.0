@@ -1,0 +1,156 @@
+.rollen {
+  position: relative;
+  text-align: center;
+  padding: 5rem 2rem;
+  min-height: 100vh;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a0a;
+  
+  .title-animated {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-out;
+    color: #e0e0e0;
+  }
+  
+  .logo {
+    margin-bottom: 3rem;
+    animation: fadeInScale 1s ease-out 0.3s backwards;
+    
+    img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.6));
+      animation: glow 3s ease-in-out infinite;
+    }
+  }
+  
+  .role-buttons {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+  animation: fadeInUp 1s ease-out 0.5s backwards;
+  
+  button {
+    position: relative;
+    padding: 1.5rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-width: 200px;
+    border: 2px solid #dc2626;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);   
+    color: #ffffff;       
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    &:hover::before {
+      left: 100%;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    &:active {
+      transform: translateY(-2px);
+    }
+  }
+  
+  .kunde,
+  .betreiber {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(220, 38, 38, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4), 0 0 30px rgba(220, 38, 38, 0.3);
+    }
+  }
+}
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(220, 38, 38, 0.9));
+  }
+}
+
+
+@media (max-width: 768px) {
+  .rollen {
+    padding: 3rem 1rem;
+    
+    .title-animated {
+      font-size: 1.5rem;
+    }
+    
+    .logo img {
+      max-width: 200px;
+    }
+    
+    .role-buttons {
+      flex-direction: column;
+      gap: 1.5rem;
+      
+      button {
+        min-width: 250px;
+      }
+    }
+  }
+}

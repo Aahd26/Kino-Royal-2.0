@@ -1,0 +1,29 @@
+{
+  "name": "kino-app",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "npx semistandard \"Webapp/src/**/*.js\" \"Webapp/src/**/*.mjs\" \"server/**/*.js\"",
+    "prebuild": "npm run lint",
+    "predebug": "npm run lint",
+    "copy:assets": "node scripts/copy-assets.js",
+    "debug": "npx esbuild Webapp/src/js/Main.mjs --bundle --outfile=dist/app.js && npx lessc Webapp/src/styles/main.less dist/app.css && npm run copy:assets",
+    "build": "npx esbuild Webapp/src/js/Main.mjs --bundle --minify --outfile=dist/app.js && npx lessc Webapp/src/styles/main.less dist/app.css --clean-css && npx terser dist/app.js -o dist/app.js -c -m && npm run copy:assets",
+    "start": "node server/server.js 8080"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.8.9",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.19.3",
+    "less": "^4.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "rimraf": "^5.0.5",
+    "semistandard": "^16.0.0",
+    "terser": "^5.21.0"
+  }
+}

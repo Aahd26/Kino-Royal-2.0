@@ -1,0 +1,530 @@
+.top-black {
+  display: none; // Nicht mehr benÃ¶tigt
+}
+
+.nav-bar {
+  background: #111111;
+  border-bottom: 2px solid #dc2626;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    max-width: 180px;
+    height: auto;
+    margin: 0;
+    animation: none;
+    filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.6));
+  }
+
+  .nav-elemente {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 1rem;
+          font-weight: 600;
+          padding: 0.5rem 1rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: #dc2626;
+          }
+        }
+      }
+    }
+  }
+
+  .konto {
+    position: relative;
+    margin: 0;
+
+    > a {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #2a2a2a;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #dc2626;
+        background: rgba(220, 38, 38, 0.1);
+      }
+    }
+
+    .konto-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #1a1a1a;
+      border: 2px solid #2a2a2a;
+      border-radius: 8px;
+      list-style: none;
+      padding: 0.5rem 0;
+      margin: 0.5rem 0 0 0;
+      min-width: 150px;
+
+      li {
+        margin: 0;
+
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+          }
+        }
+      }
+    }
+
+    &:hover .konto-dropdown {
+      display: block;
+    }
+  }
+
+  .logged-in {
+    display: none; // oder style es wie du willst
+  }
+
+  .role-switch {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #dc2626;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #dc2626;
+    }
+  }
+}
+
+.programm {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+
+  .film {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #2a2a2a;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: #dc2626;
+      box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+    }
+
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .film-info {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        color: #dc2626;
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+        color: #e0e0e0;
+        line-height: 1.5;
+
+        &:last-of-type {
+          margin-top: auto;
+          padding-top: 1rem;
+          color: #999;
+        }
+      }
+
+      .reservieren-btn {
+        margin-top: 1rem;
+        padding: 0.8rem 2rem;
+        background: transparent;
+        color: #ffffff;
+        border: 2px solid #dc2626;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        width: 100%;
+
+        &:hover {
+          background: #dc2626;
+          box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .programm {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.erster-film {
+  display: flex;
+  margin: 20px 0; 
+  gap: 20px; 
+  max-width: 600px;
+  margin-bottom: 200px;
+  margin-top: 100px;
+}
+
+.erster-film img {
+  width: auto; 
+  height: auto; 
+  border-radius: 10px; 
+}
+
+.film-info {
+  display: flex;
+  flex-direction:column; 
+  justify-content: center; 
+}
+
+.film-info h1 {
+  margin: 0;
+  font-size: 1.8rem; 
+  color: white; 
+}
+
+.film-info p {
+  margin: 5px 0; 
+  font-size: 1rem; 
+  line-height: 1.5; 
+  color: #ccc; 
+}
+.zweiter-film{
+  display: flex;
+  margin: 20px 0; 
+  gap: 20px; 
+  max-width: 600px;
+  margin-bottom: 200px;
+}
+.zweiter-film img {
+  width: 200px; 
+  height: auto; 
+  border-radius: 10px; 
+}
+
+.dritter-film{
+  display: flex;
+  margin: 20px 0; 
+  gap: 20px; 
+  max-width: 600px;
+  margin-bottom: 200px;
+}
+.dritter-film img {
+  width: 200px; 
+  height: auto; 
+  border-radius: 10px; 
+} 
+
+.footer-teil {
+  background-color: black; 
+  padding: 20px; 
+  text-align: center; 
+  width: 100%; 
+  box-sizing: border-box;
+  border-top: 5px solid red;
+}
+
+.footer-elemente ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-elemente ul li{
+  margin: 0 80px;
+}
+
+.footer-elemente a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.footer-elemente a:hover{
+  text-decoration: underline;
+}
+
+footer{
+  margin-top: auto;
+}
+
+
+
+.role-switch {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #dc2626;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #dc2626;
+      }
+}
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open-Dyslexic', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+ 
+  background-color: #121212; 
+  color: #ddd; 
+}
+
+
+
+
+
+
+
+
+
+
+.konto {
+  position: relative;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.konto-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.konto-dropdown li {
+  padding: 10px;
+}
+
+.konto-dropdown li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.konto:hover .konto-dropdown {
+  display: block;
+  margin-top: 8px;
+}
+
+.konto-dropdown li:hover {
+  background-color: #555;
+}
+
+
+.konto a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #444;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.konto a:hover {
+  background-color: #555;
+}
+
+.logged-in{
+  font-size: x-large;
+  font-family: cursive;
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .nav-bar {
+    padding: 10px 15px;
+  }
+
+  .nav-elemente ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-elemente ul li {
+    margin: 10px 0;
+  }
+
+  .logo {
+    height: 80px;
+    width: 200px;
+  }
+
+  .erster-film, .zweiter-film, .dritter-film {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .erster-film img, .zweiter-film img, .dritter-film img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-elemente ul li {
+    margin: 0 20px;
+  }
+
+  .footer-elemente a {
+    font-size: 18px;
+  }
+
+  .film-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .film-info p {
+    font-size: 0.9rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+
+}
+
+.reservieren-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #dc2626;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    background: #dc2626;
+    box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+.pagination {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  z-index: 100;
+
+  button {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #dc2626;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: #dc2626;
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      border-color: #666;
+    }
+  }
+
+  .page-info {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+  }
+}
