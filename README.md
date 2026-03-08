@@ -131,7 +131,7 @@ sudo systemctl start mongod
 # Abhängigkeiten installieren
 npm install
 
-# Projekt builden
+# Projekt bilden
 npm run build
 
 # Server starten
